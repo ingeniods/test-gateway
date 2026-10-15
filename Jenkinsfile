@@ -32,9 +32,9 @@ pipeline {
     stage('sonar') {
       steps {
         withCredentials([string(credentialsId: 'sonar-token', variable: 'SONAR_TOKEN')]) {
-          sh './mvnw -B sonar:sonar \
+          sh './mvnw -B org.sonarsource.scanner.maven:sonar-maven-plugin:4.0.0.4121:sonar \
                 -Dsonar.host.url=http://sonarqube:9000 \
-                -Dsonar.login=$SONAR_TOKEN \
+                -Dsonar.token=$SONAR_TOKEN \
                 -Dsonar.projectKey=test-gateway'
         }
       }
