@@ -1,0 +1,4 @@
+environment: dev
+namespace: agd-dev
+cd:
+  azApplicationName: test-gateway

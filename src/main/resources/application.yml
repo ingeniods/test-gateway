@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: test-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: back-tasks
+          uri: ${BACK_URL:http://test-back:8080}
+          predicates:
+            - Path=/api/**
+
+server:
+  port: 8081
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true

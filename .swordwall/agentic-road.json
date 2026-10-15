@@ -1,0 +1,7 @@
+{
+  "project": "test-gateway",
+  "gates": {
+    "build":  { "cmd": "./mvnw -B -q package", "timeout": 300 },
+    "test":   { "cmd": "./mvnw -B -q test",    "timeout": 300 }
+  }
+}
